@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+
+[assembly: InternalsVisibleTo("UniFiApiDotnet.Tests")]
 
 namespace UniFiApiDotnet.JsonConverter
 {

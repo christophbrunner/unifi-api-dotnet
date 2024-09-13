@@ -1,10 +1,11 @@
 {
   "data": [
     {
-      "hostId": "00000000-0000-0000-0000-000000000123",
+      "hostId": "000000000000000000000000000000000000000000000000000000000000:000000000",
       "isOwner": true,
       "meta": {
         "desc": "Default",
+        "gatewayMac": "d0:21:00:00:00:00",
         "name": "default",
         "timezone": "Europe/Zurich"
       },
@@ -29,51 +30,33 @@
           "wiredClient": 15,
           "wiredDevice": 16
         },
-        "percentages": {}
-      },
-      "subscriptionEndTime": "2024-09-12T13:26:18Z"
-    },
-    {
-      "hostId": "000000000000000000000000000000000000000000000000000000000000:000000000",
-      "isOwner": true,
-      "meta": {
-        "desc": "Default",
-        "gatewayMac": "d0:21:00:00:00:00",
-        "name": "default",
-        "timezone": "Europe/Zurich"
-      },
-      "permission": "admin",
-      "siteId": "000000000000000000000000",
-      "statistics": {
-        "counts": {
-          "criticalNotification": 0,
-          "gatewayDevice": 1,
-          "guestClient": 0,
-          "lanConfiguration": 7,
-          "offlineDevice": 0,
-          "offlineGatewayDevice": 0,
-          "offlineWifiDevice": 0,
-          "offlineWiredDevice": 0,
-          "pendingUpdateDevice": 3,
-          "totalDevice": 11,
-          "wanConfiguration": 2,
-          "wifiClient": 15,
-          "wifiConfiguration": 3,
-          "wifiDevice": 6,
-          "wiredClient": 16,
-          "wiredDevice": 4
-        },
-        "internetIssues": [],
+        "internetIssues": [
+          {
+            "highLatency": true,
+            "index": 5731624,
+            "latencyAvgMs": 23,
+            "latencyMaxMs": 35
+          },
+          {
+            "highLatency": true,
+            "index": 5731625,
+            "latencyAvgMs": 35,
+            "latencyMaxMs": 78
+          },
+          {
+            "index": 5731626
+          }
+        ],
         "ispInfo": {
           "name": "Swisscom",
           "organization": "Bluewin"
         },
         "percentages": {
-          "txRetry": 3.403215394041138,
+          "txRetry": 3.04,
           "wanUptime": 100
         }
       },
-      "subscriptionEndTime": "2024-09-12T13:26:18Z"
+      "subscriptionEndTime": "2024-01-01T01:00:00Z"
     },
     {
       "hostId": "000000000000000000000000000000000000000000000000000000000000:000000000",
@@ -115,7 +98,7 @@
           "wanUptime": 100
         }
       },
-      "subscriptionEndTime": "2024-09-12T13:26:18Z"
+      "subscriptionEndTime": "2024-01-01T01:00:00Z"
     },
     {
       "hostId": "000000000000000000000000000000000000000000000000000000000000:000000000",
@@ -127,7 +110,7 @@
       "permission": "",
       "siteId": "000000000000000000000000",
       "statistics": null,
-      "subscriptionEndTime": "2024-09-12T13:26:18Z"
+      "subscriptionEndTime": "2024-01-01T01:00:00Z"
     },
     {
       "hostId": "000000000000000000000000000000000000000000000000000000000000:000000000",
@@ -139,7 +122,7 @@
       "permission": "",
       "siteId": "000000000000000000000000",
       "statistics": null,
-      "subscriptionEndTime": "2024-09-12T13:26:18Z"
+      "subscriptionEndTime": "2024-01-01T01:00:00Z"
     }
   ],
   "httpStatusCode": 200,

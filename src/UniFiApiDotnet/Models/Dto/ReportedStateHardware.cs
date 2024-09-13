@@ -6,7 +6,6 @@ using UniFiApiDotnet.Abstraction;
 namespace UniFiApiDotnet.Models.Dto
 {
     [DebuggerDisplay("{Name,nq}")]
-
     internal class ReportedStateHardware : IReportedStateHardware
     {
         public string Bom { get; set; } = string.Empty;
