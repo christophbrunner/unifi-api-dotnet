@@ -1,0 +1,783 @@
+{
+	"data": [
+		{
+			"hardwareId": "00000000-0000-0000-0000-000000000123",
+			"id": "000000000000000000000000000000000000000000000000000000000000:000000000",
+			"ipAddress": "127.0.0.1",
+			"isBlocked": true,
+			"lastConnectionStateChange": "2024-01-01T01:00:00Z",
+			"latestBackupTime": "2024-01-01T01:00:00Z",
+			"owner": true,
+			"registrationTime": "2024-01-01T01:00:00Z",
+			"reportedState": {
+				"anonid": "00000000-0000-0000-0000-000000000123",
+				"apps": [
+					{
+						"controllerStatus": "READY",
+						"name": "users",
+						"port": 9080,
+						"swaiVersion": 2,
+						"type": "app",
+						"version": "1.8.43+3814"
+					}
+				],
+				"availableChannels": [
+					"release",
+					"beta",
+					"release-candidate"
+				],
+				"consolesOnSameLocalNetwork": [
+					"000000000000"
+				],
+				"controller_uuid": "000000000000000000000000000000000000000000000000000000000000:000000000",
+				"controllers": [
+					{
+						"controllerStatus": "READY",
+						"features": {
+							"stackable": true
+						},
+						"initialDeviceListSynced": true,
+						"installState": "installed",
+						"isConfigured": true,
+						"isGeofencingEnabled": true,
+						"isInstalled": true,
+						"isRunning": true,
+						"name": "protect",
+						"port": 7080,
+						"releaseChannel": "beta",
+						"required": true,
+						"restorePercentage": 100,
+						"state": "active",
+						"status": "ok",
+						"statusMessage": "",
+						"swaiVersion": 5,
+						"type": "controller",
+						"uiVersion": "5.0.10",
+						"unadoptedDevices": [
+							{
+								"addresses": [
+									{
+										"ip": "127.0.0.1",
+										"mac": "E40000000000"
+									}
+								],
+								"iconId": "00000000-0000-0000-0000-000000000123",
+								"model": "G5 Flex",
+								"name": "Camera G5 Flex",
+								"totalCount": 1
+							}
+						],
+						"updatable": true,
+						"updateAvailable": null,
+						"updateProgress": 100,
+						"version": "5.0.20"
+					},
+					{
+						"installState": "uninstalled",
+						"installable": true,
+						"isConfigured": true,
+						"isInstalled": true,
+						"isRunning": true,
+						"name": "access",
+						"port": 12080,
+						"releaseChannel": "beta",
+						"state": "inactive",
+						"status": "offline",
+						"statusMessage": "",
+						"type": "controller",
+						"unadoptedDevices": [],
+						"updatable": true,
+						"version": null
+					},
+					{
+						"installState": "uninstalled",
+						"installable": true,
+						"isConfigured": true,
+						"isInstalled": true,
+						"isRunning": true,
+						"name": "innerspace",
+						"port": 17080,
+						"releaseChannel": "beta",
+						"state": "inactive",
+						"status": "offline",
+						"statusMessage": "",
+						"type": "controller",
+						"unadoptedDevices": [],
+						"updatable": true,
+						"version": null
+					}
+				],
+				"country": 840,
+				"deviceErrorCode": null,
+				"deviceState": "setup",
+				"deviceStateLastChanged": 1725060081,
+				"directConnectDomain": "000000000000000000000000000000000.id.ui.direct",
+				"features": {
+					"cloud": {
+						"applicationEvents": true,
+						"applicationEventsHttp": true
+					},
+					"cloudBackup": true,
+					"deviceList": {
+						"autolinkDevices": true,
+						"partialUpdates": true,
+						"ucp4Events": true
+					},
+					"directRemoteConnection": true,
+					"hasGateway": true,
+					"hasLCM": true,
+					"hasLED": true,
+					"infoApis": {
+						"firmwareUpdate": true
+					},
+					"isAutomaticFailoverAvailable": true,
+					"mfa": true,
+					"notifications": true,
+					"sharedTokens": true,
+					"supportForm": true,
+					"teleport": true,
+					"teleportState": "UNSUPPORTED",
+					"uidService": true
+				},
+				"firmwareUpdate": {
+					"latestAvailableVersion": null
+				},
+				"hardware": {
+					"bom": "113-03192-68",
+					"cpu.id": "00000000-00000000",
+					"debianCodename": "bullseye",
+					"firmwareVersion": "4.0.18",
+					"hwrev": 817220,
+					"isUbios": true,
+					"mac": "E40000000000",
+					"name": "UniFi Network Video Recorder",
+					"qrid": "abcdef",
+					"reboot": "30",
+					"serialno": "1234567890xx",
+					"shortname": "UNVR",
+					"subtype": "",
+					"sysid": 59930,
+					"upgrade": "310",
+					"uuid": "00000000-0000-0000-0000-000000000123"
+				},
+				"host_type": 59930,
+				"hostname": "CAM-Storage",
+				"ip": "127.0.0.1",
+				"ipAddrs": [],
+				"isStacked": true,
+				"location": {
+					"lat": 47.0511,
+					"long": 8.3056,
+					"radius": 200,
+					"text": "-----------"
+				},
+				"mac": "E40000000000",
+				"mgmt_port": 443,
+				"name": "CAM_Storage",
+				"releaseChannel": "beta",
+				"state": "connected",
+				"timezone": "Europe/Zurich",
+				"ucareState": null,
+				"uidb": {
+					"guid": "00000000-0000-0000-0000-000000000123",
+					"id": "00000000-0000-0000-0000-000000000123",
+					"images": {
+						"default": "00000000000000000000000000000000",
+						"nopadding": "00000000000000000000000000000000",
+						"topology": "00000000000000000000000000000000"
+					}
+				},
+				"unadoptedUnifiOSDevices": [],
+				"version": "4.0.189"
+			},
+			"type": "console",
+			"userData": {
+				"apps": [
+					"users"
+				],
+				"consoleGroupMembers": [
+					{
+						"mac": "E40000000000",
+						"role": "UNADOPTED",
+						"roleAttributes": {
+							"applications": {
+								"access": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								},
+								"innerspace": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								},
+								"protect": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								}
+							},
+							"candidateRoles": [],
+							"connectedState": "CONNECTED",
+							"connectedStateLastChanged": "2024-01-01T01:00:00Z"
+						},
+						"sysId": 59930
+					}
+				],
+				"controllers": [
+					"protect",
+					"access",
+					"innerspace"
+				],
+				"email": "info@brunner-sw.ch",
+				"features": {
+					"deviceGroups": true,
+					"floorplan": {
+						"canEdit": true,
+						"canView": true
+					},
+					"manageApplications": true,
+					"notifications": true,
+					"pion": true,
+					"webrtc": {
+						"iceRestart": true,
+						"mediaStreams": true,
+						"twoWayAudio": true
+					}
+				},
+				"fullName": "Christoph Brunner",
+				"localId": "00000000-0000-0000-0000-000000000123",
+				"permissions": {
+					"access.management": [
+						"admin"
+					],
+					"calculus.management": [
+						"admin"
+					],
+					"connect.management": [
+						"admin"
+					],
+					"drive.management": [
+						"admin"
+					],
+					"innerspace.management": [
+						"admin"
+					],
+					"led.management": [
+						"admin"
+					],
+					"network.management": [
+						"admin"
+					],
+					"olympus.management": [
+						"admin"
+					],
+					"protect.management": [
+						"admin"
+					],
+					"system.management.location": [
+						"admin"
+					],
+					"system.management.user": [
+						"admin"
+					],
+					"talk.management": [
+						"admin"
+					]
+				},
+				"role": "owner",
+				"roleId": "00000000-0000-0000-0000-000000000123",
+				"status": "ACTIVE"
+			}
+		},
+		{
+			"hardwareId": "00000000-0000-0000-0000-000000000123",
+			"id": "000000000000000000000000000000000000000000000000000000000000:000000000",
+			"ipAddress": "127.0.0.1",
+			"isBlocked": true,
+			"lastConnectionStateChange": "2024-01-01T01:00:00Z",
+			"latestBackupTime": "2024-01-01T01:00:00Z",
+			"owner": true,
+			"registrationTime": "2024-01-01T01:00:00Z",
+			"reportedState": {
+				"anonid": "00000000-0000-0000-0000-000000000123",
+				"apps": [
+					{
+						"controllerStatus": "READY",
+						"name": "users",
+						"port": 9080,
+						"swaiVersion": 2,
+						"type": "app",
+						"version": "1.8.43+3814"
+					}
+				],
+				"availableChannels": [
+					"release",
+					"beta",
+					"release-candidate"
+				],
+				"consolesOnSameLocalNetwork": [
+					"000000000000"
+				],
+				"controller_uuid": "000000000000000000000000000000000000000000000000000000000000:000000000",
+				"controllers": [
+					{
+						"abridged": true,
+						"controllerStatus": "READY",
+						"initialDeviceListSynced": true,
+						"installState": "installed",
+						"isConfigured": true,
+						"isInstalled": true,
+						"isRunning": true,
+						"name": "network",
+						"port": 8081,
+						"releaseChannel": "beta",
+						"required": true,
+						"state": "active",
+						"status": "ok",
+						"statusMessage": "",
+						"swaiVersion": 3,
+						"type": "controller",
+						"uiVersion": "8.5.1.0",
+						"unadoptedDevices": [],
+						"updatable": true,
+						"updateAvailable": null,
+						"updateProgress": 100,
+						"version": "8.5.1"
+					},
+					{
+						"installState": "downloaded",
+						"installable": true,
+						"isConfigured": true,
+						"isInstalled": true,
+						"isRunning": true,
+						"name": "protect",
+						"port": 7080,
+						"releaseChannel": "beta",
+						"state": "inactive",
+						"status": "offline",
+						"statusMessage": "",
+						"type": "controller",
+						"unadoptedDevices": [
+							{
+								"addresses": [
+									{
+										"ip": "127.0.0.1",
+										"mac": "E40000000000"
+									}
+								],
+								"iconId": "00000000-0000-0000-0000-000000000123",
+								"model": "G5 Flex",
+								"name": "Camera G5 Flex",
+								"totalCount": 1
+							}
+						],
+						"updatable": true,
+						"version": null
+					},
+					{
+						"installState": "uninstalled",
+						"installable": true,
+						"isConfigured": true,
+						"isInstalled": true,
+						"isRunning": true,
+						"name": "access",
+						"port": 12080,
+						"releaseChannel": "beta",
+						"state": "inactive",
+						"status": "offline",
+						"statusMessage": "",
+						"type": "controller",
+						"unadoptedDevices": [],
+						"updatable": true,
+						"version": null
+					},
+					{
+						"installState": "uninstalled",
+						"installable": true,
+						"isConfigured": true,
+						"isInstalled": true,
+						"isRunning": true,
+						"name": "talk",
+						"port": 30080,
+						"releaseChannel": "beta",
+						"state": "inactive",
+						"status": "offline",
+						"statusMessage": "",
+						"type": "controller",
+						"unadoptedDevices": [],
+						"updatable": true,
+						"version": null
+					},
+					{
+						"installState": "uninstalled",
+						"installable": true,
+						"isConfigured": true,
+						"isInstalled": true,
+						"isRunning": true,
+						"name": "connect",
+						"port": 54480,
+						"releaseChannel": "beta",
+						"state": "inactive",
+						"status": "offline",
+						"statusMessage": "",
+						"type": "controller",
+						"unadoptedDevices": [],
+						"updatable": true,
+						"version": null
+					},
+					{
+						"controllerStatus": "READY",
+						"initialDeviceListSynced": true,
+						"installState": "installed",
+						"installable": true,
+						"isConfigured": true,
+						"isInstalled": true,
+						"isRunning": true,
+						"name": "innerspace",
+						"port": 17080,
+						"releaseChannel": "beta",
+						"state": "active",
+						"status": "ok",
+						"statusMessage": "",
+						"swaiVersion": 5,
+						"type": "controller",
+						"uiVersion": "1.1.11",
+						"unadoptedDevices": [],
+						"updatable": true,
+						"updateAvailable": null,
+						"version": "1.1.11"
+					}
+				],
+				"country": 756,
+				"deviceErrorCode": null,
+				"deviceState": "setup",
+				"deviceStateLastChanged": 1725068205,
+				"directConnectDomain": "0000000000000000000000000000000000000.id.ui.direct",
+				"features": {
+					"cloud": {
+						"applicationEvents": true,
+						"applicationEventsHttp": true
+					},
+					"cloudBackup": true,
+					"deviceList": {
+						"autolinkDevices": true,
+						"partialUpdates": true,
+						"ucp4Events": true
+					},
+					"directRemoteConnection": true,
+					"hasGateway": true,
+					"hasLCM": true,
+					"hasLED": true,
+					"infoApis": {
+						"firmwareUpdate": true
+					},
+					"isAutomaticFailoverAvailable": true,
+					"mfa": true,
+					"notifications": true,
+					"sharedTokens": true,
+					"supportForm": true,
+					"teleport": true,
+					"teleportState": "ENABLED",
+					"uidService": true
+				},
+				"firmwareUpdate": {
+					"latestAvailableVersion": null
+				},
+				"hardware": {
+					"bom": "113-00917-26",
+					"cpu.id": "00000000-00000000",
+					"debianCodename": "bullseye",
+					"firmwareVersion": "4.0.19",
+					"hwrev": 234778,
+					"isUbios": true,
+					"mac": "E40000000000",
+					"name": "UniFi Dream Machine SE",
+					"qrid": "abcdef",
+					"reboot": "30",
+					"serialno": "1234567890xx",
+					"shortname": "UDMPROSE",
+					"subtype": "",
+					"sysid": 59948,
+					"upgrade": "310",
+					"uuid": "00000000-0000-0000-0000-000000000123"
+				},
+				"host_type": 59948,
+				"hostname": "GW-01-UDM-ProSE",
+				"internetIssues5min": {
+					"periods": [
+						{
+							"index": 5750514
+						}
+					]
+				},
+				"ip": "127.0.0.1",
+				"ipAddrs": [
+					"fe80::1234:1234:1234:1234",
+					"127.0.0.1"
+				],
+				"isStacked": true,
+				"location": {
+					"lat": 47,
+					"long": 8,
+					"radius": 200,
+					"text": "Lucerne, Switzerland"
+				},
+				"mac": "E40000000000",
+				"mgmt_port": 443,
+				"name": "GW_01_UDM-ProSE",
+				"releaseChannel": "beta",
+				"state": "connected",
+				"timezone": "Europe/Zurich",
+				"ucareState": null,
+				"uidb": {
+					"guid": "00000000-0000-0000-0000-000000000123",
+					"id": "00000000-0000-0000-0000-000000000123",
+					"images": {
+						"default": "00000000000000000000000000000000",
+						"nopadding": "00000000000000000000000000000000",
+						"topology": "00000000000000000000000000000000"
+					}
+				},
+				"unadoptedUnifiOSDevices": [],
+				"version": "4.0.191"
+			},
+			"type": "console",
+			"userData": {
+				"apps": [
+					"users"
+				],
+				"consoleGroupMembers": [
+					{
+						"mac": "E40000000000",
+						"role": "UNADOPTED",
+						"roleAttributes": {
+							"applications": {
+								"access": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								},
+								"apollo": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								},
+								"connect": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								},
+								"innerspace": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								},
+								"network": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								},
+								"protect": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								},
+								"talk": {
+									"owned": true,
+									"required": true,
+									"supported": true
+								}
+							},
+							"candidateRoles": [
+								"PRIMARY"
+							],
+							"connectedState": "CONNECTED",
+							"connectedStateLastChanged": "2024-01-01T01:00:00Z"
+						},
+						"sysId": 59948
+					}
+				],
+				"controllers": [
+					"network",
+					"protect",
+					"access",
+					"talk",
+					"connect",
+					"innerspace"
+				],
+				"email": "info@brunner-sw.ch",
+				"features": {
+					"deviceGroups": true,
+					"floorplan": {
+						"canEdit": true,
+						"canView": true
+					},
+					"manageApplications": true,
+					"notifications": true,
+					"pion": true,
+					"webrtc": {
+						"iceRestart": true,
+						"mediaStreams": true,
+						"twoWayAudio": true
+					}
+				},
+				"fullName": "Christoph Brunner",
+				"localId": "00000000-0000-0000-0000-000000000123",
+				"permissions": {
+					"access.management": [
+						"admin"
+					],
+					"calculus.management": [
+						"admin"
+					],
+					"connect.management": [
+						"admin"
+					],
+					"drive.management": [
+						"admin"
+					],
+					"innerspace.management": [
+						"admin"
+					],
+					"led.management": [
+						"admin"
+					],
+					"network.management": [
+						"admin"
+					],
+					"olympus.management": [
+						"admin"
+					],
+					"protect.management": [
+						"admin"
+					],
+					"system.management.location": [
+						"admin"
+					],
+					"system.management.user": [
+						"admin"
+					],
+					"talk.management": [
+						"admin"
+					]
+				},
+				"role": "owner",
+				"roleId": "00000000-0000-0000-0000-000000000123",
+				"status": "ACTIVE"
+			}
+		},
+		{
+			"hardwareId": "00000000-0000-0000-0000-000000000123",
+			"id": "000000000000000000000000000000000000000000000000000000000000:000000000",
+			"ipAddress": "127.0.0.1",
+			"isBlocked": true,
+			"lastConnectionStateChange": "2024-01-01T01:00:00Z",
+			"latestBackupTime": "",
+			"owner": true,
+			"registrationTime": "2024-01-01T01:00:00Z",
+			"reportedState": {
+				"controller_uuid": "00000000-0000-0000-0000-000000000123",
+				"firmware_version": "UCK.mtk7623.v1.1.19.f4a17b0.210204.0232",
+				"hardware_id": "00000000-0000-0000-0000-000000000123",
+				"host_type": 59712,
+				"hostname": "example-domain.ui.com",
+				"inform_port": 8080,
+				"ipAddrs": [
+					"127.0.0.1"
+				],
+				"mgmt_port": 8443,
+				"name": "Brunner (old)",
+				"override_inform_host": true,
+				"release_channel": "release",
+				"state": "connected",
+				"version": "7.2.97"
+			},
+			"type": "network-server",
+			"userData": {}
+		},
+		{
+			"hardwareId": "00000000-0000-0000-0000-000000000123",
+			"id": "00000000-0000-0000-0000-000000000123",
+			"ipAddress": "127.0.0.1",
+			"isBlocked": true,
+			"lastConnectionStateChange": "2024-01-01T01:00:00Z",
+			"latestBackupTime": "",
+			"owner": true,
+			"registrationTime": "2024-01-01T01:00:00Z",
+			"reportedState": {
+				"controller_uuid": "00000000-0000-0000-0000-000000000123",
+				"firmware_version": null,
+				"hardware_id": "00000000-0000-0000-0000-000000000123",
+				"host_type": 0,
+				"hostname": "example-domain.ui.com",
+				"inform_port": 8080,
+				"ipAddrs": [
+					"127.0.0.1",
+					"127.0.0.2"
+				],
+				"mgmt_port": 8443,
+				"name": "UniFi Network (Test)",
+				"override_inform_host": true,
+				"release_channel": "release",
+				"state": "connected",
+				"ui": {
+					"cdnPublicPaths": [
+						"https://net-fe-static-assets.network-controller.svc.ui.com/release/8.4.59.0/unifi"
+					],
+					"entrypoint": "hybrid-swai-8.4.59.0-gba1b4b009.js",
+					"prefetch": [
+						"react/js/swai.648a4078db3f07130e37.js",
+						"react/js/dynamic.ufsdn.47170e592e87d671f88d.js",
+						"react/js/dynamic.appSwitcher.a39f73d49205dd9be68e.js",
+						"react/js/webrtc-connection.7ae56af4252302305d08.js",
+						"react/js/hotspot.2d894c735c7a12b933b7.js",
+						"react/js/hotspot-guests.1f5d5ff3a762556816e3.js",
+						"react/js/hotspot-payments.23f5746e1ad30adc594c.js",
+						"react/js/hotspot-vouchers.2e2ef406086fed77a2f8.js",
+						"react/js/hotspot-portal.6d055548b0b7c6e8f3e4.js",
+						"react/js/wifiPerformance.f39cb23b93e6d2c6a1b1.js",
+						"react/js/wifi-scanner.23befac6dcc081602237.js",
+						"react/js/wifiman.c9905903fb2c01239c1e.js",
+						"react/js/radiosPage.a126b145e1065d7e7c67.js",
+						"react/js/topology.e37ca9677e23a9661aca.js",
+						"react/js/devices.b80d8c4920a30be4c002.js",
+						"react/js/clients.5cb088fb95288016d737.js",
+						"react/js/ports.5ee7f9b3afe0e333bbfc.js",
+						"react/js/portManagement.3c5f5e8a4f104524da67.js",
+						"react/js/port-insights.50f1f9670aa5676daaba.js",
+						"react/js/vlans.5ec3321bae04008a825d.js",
+						"react/js/insights.485f66ce3dc2eaff245c.js",
+						"react/js/traffic.19728a8627d2e91ccb82.js",
+						"react/js/viewer.d1b29bc71547fefcf780.js",
+						"react/js/score.a6e78f917b2ffb5fe0c7.js",
+						"react/js/inspection.970c788091f142977669.js",
+						"react/js/geo.1fcc2b902a2953b68504.js",
+						"react/js/radios.418831b1ba5f0cf3ae6d.js",
+						"react/js/logs.7b3bf83f2fb6aee02aad.js",
+						"react/js/settings.d1690a3b6587dc2d8122.js",
+						"react/js/adminPage.db1d33e45c2a5d89e62f.js",
+						"react/js/innerspace.ebe98b6cd6a386fbd79d.js",
+						"react/js/ulteProAdoption.114bcb75aa5f38f78da4.js",
+						"react/js/app.ded776ebe19f1b454337.js",
+						"react/js/ips.d018cfd43f90feef6cfc.js",
+						"react/js/ips-map.244a84cd90e16d2183aa.js"
+					],
+					"swaiVersion": 3
+				},
+				"version": "8.4.59"
+			},
+			"type": "network-server",
+			"userData": {
+				"permissions": {
+					"network.management": [
+						"admin"
+					]
+				},
+				"status": "ACTIVE"
+			}
+		}
+	],
+	"httpStatusCode": 200,
+	"traceId": "00000000000000000000000000000000"
+}

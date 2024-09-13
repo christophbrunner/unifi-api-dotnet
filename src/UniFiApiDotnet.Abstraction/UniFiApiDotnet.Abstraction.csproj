@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+		<LangVersion>8.0</LangVersion>
+		<Nullable>enable</Nullable>
+
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EnablePackageValidation>true</EnablePackageValidation>
+
+		<Authors>Christoph Brunner</Authors>
+		<Description>dotnet wrapper around UniFi's official API</Description>
+		<PackageProjectUrl>https://github.com/christophbrunner/unifi-api-dotnet</PackageProjectUrl>
+		<PackageTags>unifi, api, async, library</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/christophbrunner/unifi-api-dotnet</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageReadmeFile>NuGet_README.md</PackageReadmeFile>
+		<PackageIcon>UniFiApiDotnet.png</PackageIcon>
+		<Version>0.1.2-alpha</Version>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<Configuration>Release</Configuration>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="..\..\NuGet_README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\UniFiApiDotnet.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+</Project>

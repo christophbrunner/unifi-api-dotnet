@@ -1,0 +1,147 @@
+{
+  "data": [
+    {
+      "hostId": "00000000-0000-0000-0000-000000000123",
+      "isOwner": true,
+      "meta": {
+        "desc": "Default",
+        "name": "default",
+        "timezone": "Europe/Zurich"
+      },
+      "permission": "admin",
+      "siteId": "000000000000000000000000",
+      "statistics": {
+        "counts": {
+          "criticalNotification": 1,
+          "gatewayDevice": 2,
+          "guestClient": 3,
+          "lanConfiguration": 4,
+          "offlineDevice": 5,
+          "offlineGatewayDevice": 6,
+          "offlineWifiDevice": 7,
+          "offlineWiredDevice": 8,
+          "pendingUpdateDevice": 9,
+          "totalDevice": 10,
+          "wanConfiguration": 11,
+          "wifiClient": 12,
+          "wifiConfiguration": 13,
+          "wifiDevice": 14,
+          "wiredClient": 15,
+          "wiredDevice": 16
+        },
+        "percentages": {}
+      },
+      "subscriptionEndTime": "2024-09-12T13:26:18Z"
+    },
+    {
+      "hostId": "000000000000000000000000000000000000000000000000000000000000:000000000",
+      "isOwner": true,
+      "meta": {
+        "desc": "Default",
+        "gatewayMac": "d0:21:00:00:00:00",
+        "name": "default",
+        "timezone": "Europe/Zurich"
+      },
+      "permission": "admin",
+      "siteId": "000000000000000000000000",
+      "statistics": {
+        "counts": {
+          "criticalNotification": 0,
+          "gatewayDevice": 1,
+          "guestClient": 0,
+          "lanConfiguration": 7,
+          "offlineDevice": 0,
+          "offlineGatewayDevice": 0,
+          "offlineWifiDevice": 0,
+          "offlineWiredDevice": 0,
+          "pendingUpdateDevice": 3,
+          "totalDevice": 11,
+          "wanConfiguration": 2,
+          "wifiClient": 15,
+          "wifiConfiguration": 3,
+          "wifiDevice": 6,
+          "wiredClient": 16,
+          "wiredDevice": 4
+        },
+        "internetIssues": [],
+        "ispInfo": {
+          "name": "Swisscom",
+          "organization": "Bluewin"
+        },
+        "percentages": {
+          "txRetry": 3.403215394041138,
+          "wanUptime": 100
+        }
+      },
+      "subscriptionEndTime": "2024-09-12T13:26:18Z"
+    },
+    {
+      "hostId": "000000000000000000000000000000000000000000000000000000000000:000000000",
+      "isOwner": true,
+      "meta": {
+        "desc": "Default",
+        "gatewayMac": "f4:92:00:00:00:00",
+        "name": "default",
+        "timezone": "Europe/Zurich"
+      },
+      "permission": "admin",
+      "siteId": "000000000000000000000000",
+      "statistics": {
+        "counts": {
+          "criticalNotification": 0,
+          "gatewayDevice": 1,
+          "guestClient": 4,
+          "lanConfiguration": 6,
+          "offlineDevice": 0,
+          "offlineGatewayDevice": 0,
+          "offlineWifiDevice": 0,
+          "offlineWiredDevice": 0,
+          "pendingUpdateDevice": 0,
+          "totalDevice": 4,
+          "wanConfiguration": 2,
+          "wifiClient": 3,
+          "wifiConfiguration": 3,
+          "wifiDevice": 2,
+          "wiredClient": 7,
+          "wiredDevice": 1
+        },
+        "internetIssues": [],
+        "ispInfo": {
+          "name": "Swisscom",
+          "organization": "Bluewin"
+        },
+        "percentages": {
+          "txRetry": 4.958554034686746,
+          "wanUptime": 100
+        }
+      },
+      "subscriptionEndTime": "2024-09-12T13:26:18Z"
+    },
+    {
+      "hostId": "000000000000000000000000000000000000000000000000000000000000:000000000",
+      "isOwner": true,
+      "meta": {
+        "desc": "Default",
+        "name": "default"
+      },
+      "permission": "",
+      "siteId": "000000000000000000000000",
+      "statistics": null,
+      "subscriptionEndTime": "2024-09-12T13:26:18Z"
+    },
+    {
+      "hostId": "000000000000000000000000000000000000000000000000000000000000:000000000",
+      "isOwner": true,
+      "meta": {
+        "desc": null,
+        "name": "super"
+      },
+      "permission": "",
+      "siteId": "000000000000000000000000",
+      "statistics": null,
+      "subscriptionEndTime": "2024-09-12T13:26:18Z"
+    }
+  ],
+  "httpStatusCode": 200,
+  "traceId": "8814e9a06dc041d53ab85ecf6c753858"
+}

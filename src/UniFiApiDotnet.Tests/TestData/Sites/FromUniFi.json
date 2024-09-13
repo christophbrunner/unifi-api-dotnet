@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "hostId": "900A6F00301100000000074A6BA90000000007A3387E0000000063EC9853:123456789",
+      "isOwner": true,
+      "meta": {
+        "desc": "Default",
+        "gatewayMac": "f4:e2:c6:c2:3f:13",
+        "name": "default",
+        "timezone": "Europe/Riga"
+      },
+      "permission": "admin",
+      "siteId": "661900ae6aec8f548d49fd54",
+      "statistics": {
+        "counts": {
+          "criticalNotification": 0,
+          "gatewayDevice": 1,
+          "guestClient": 0,
+          "lanConfiguration": 2,
+          "offlineDevice": 0,
+          "offlineGatewayDevice": 0,
+          "offlineWifiDevice": 0,
+          "offlineWiredDevice": 0,
+          "pendingUpdateDevice": 0,
+          "totalDevice": 1,
+          "wanConfiguration": 2,
+          "wifiClient": 0,
+          "wifiConfiguration": 0,
+          "wifiDevice": 0,
+          "wiredClient": 1,
+          "wiredDevice": 0
+        },
+        "internetIssues": [
+          {
+            "highLatency": true,
+            "index": 5731624,
+            "latencyAvgMs": 23,
+            "latencyMaxMs": 35
+          },
+          {
+            "highLatency": true,
+            "index": 5731625,
+            "latencyAvgMs": 35,
+            "latencyMaxMs": 78
+          },
+          {
+            "index": 5731626
+          }
+        ],
+        "ispInfo": {
+          "name": "TET",
+          "organization": "SIA Tet"
+        },
+        "percentages": {
+          "txRetry": 2.03,
+          "wanUptime": 99.86
+        }
+      },
+      "subscriptionEndTime": "2024-06-27T13:09:46Z"
+    }
+  ],
+  "httpStatusCode": 200,
+  "traceId": "a7dc15e0eb4527142d7823515b15f87d"
+}
