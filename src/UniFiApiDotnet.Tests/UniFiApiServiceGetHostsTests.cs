@@ -1,42 +1,9 @@
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using UniFiApiDotnet.Abstraction;
-using UniFiApiDotnet.Models.Dto;
 using Xunit;
 
 namespace UniFiApiDotnet.Tests;
 
 public class UniFiApiServiceGetHostsTests : BaseTest
 {
-    //[Fact]
-    //public async void GetHosts_RAWJson()
-    //{
-    //    // Arrange
-    //    var uniFiApiService = GetUniFiApiService("Hosts/Full.json");
-
-    //    // Act
-    //    var hosts = await uniFiApiService.GetHosts();
-
-    //    var full = new GenericApiResponse<IEnumerable<IHost>>()
-    //    {
-    //        Data = hosts
-    //    };
-
-    //    var newJsonString = JsonSerializer.Serialize(full, new JsonSerializerOptions()
-    //    {
-    //        PropertyNameCaseInsensitive = true,
-    //        WriteIndented = true,
-    //        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull, DictionaryKeyPolicy = JsonNamingPolicy.KebabCaseLower
-    //    });
-
-   
-
-
-    //    await File.WriteAllTextAsync("c:\\temp\\hosts.json", newJsonString);
-
-    //    // Assert
-    //}
-
     [Fact]
     public async void GetHosts_HostCount1()
     {
@@ -60,18 +27,18 @@ public class UniFiApiServiceGetHostsTests : BaseTest
         var hosts = await uniFiApiService.GetHosts();
 
         // Assert
-        Assert.Equal(4,hosts.Count());
+        Assert.Equal(4, hosts.Count());
     }
 
     [Fact]
-    public async void GetHosts_HostValues()
+    public async void GetHosts_HostValues_Demo()
     {
         // Arrange
         var uniFiApiService = GetUniFiApiService("Hosts/FromUniFi.json");
 
         // Act
         var hosts = await uniFiApiService.GetHosts();
-var host = hosts.First();
+        var host = hosts.First();
 
         // Assert
         // Check root values
@@ -111,7 +78,7 @@ var host = hosts.First();
         Assert.Equal("4.0.180", host.ReportedState.Version);
 
         // Check reportedState.Apps values
-        Assert.Single( host.ReportedState.Apps);
+        Assert.Single(host.ReportedState.Apps);
 
         var app = host.ReportedState.Apps.First();
 
@@ -153,14 +120,15 @@ var host = hosts.First();
         Assert.Equal("8.4.20.0", controller1.UiVersion);
         Assert.True(controller1.Updatable);
         Assert.Equal("8.4.20", controller1.Version);
-        //todo:  Check reportedState.controllers[0].updateAvailable. values
-        //todo: Check reportedState.controllers[0].features. values
-        //todo: Check reportedState.controllers[0].updateAvailable. values
+
+        Assert.Null(controller1.Features);
+        Assert.Null(controller1.UpdateAvailable);
 
         var controller2 = host.ReportedState.Controllers.Skip(1).First();
         Assert.Equal("protect", controller2.Name);
 
-        //todo: Check reportedState.controllers[1].features. values
+        Assert.NotNull(controller2.Features);
+        Assert.False(controller2.Features.Stackable);
 
         // Check reportedState.Features values
         Assert.True(host.ReportedState.Features.CloudBackup);
@@ -188,9 +156,25 @@ var host = hosts.First();
         // Check reportedState.Features.InfoApis values
         Assert.True(host.ReportedState.Features.InfoApis.FirmwareUpdate);
 
-        //todo: Check reportedState.features values
         //todo: Check reportedState.firmwareUpdate values
-        //todo: Check reportedState.hardware values
+
+        // Check reportedState.Hardware values
+        Assert.Equal("113-00917-42", host.ReportedState.Hardware.Bom);
+        Assert.Equal("411fd073-00000000", host.ReportedState.Hardware.CpuId);
+        Assert.Equal("bullseye", host.ReportedState.Hardware.DebianCodename);
+        Assert.Equal("4.0.6", host.ReportedState.Hardware.FirmwareVersion);
+        Assert.Equal(234794, host.ReportedState.Hardware.HwRev);
+        Assert.Equal("F4E2C6C23F13", host.ReportedState.Hardware.Mac);
+        Assert.Equal("UniFi Dream Machine SE", host.ReportedState.Hardware.Name);
+        Assert.Equal("QwWvUy", host.ReportedState.Hardware.QrId);
+        Assert.Equal("30", host.ReportedState.Hardware.Reboot);
+        Assert.Equal("f4e2c6c23f13", host.ReportedState.Hardware.SerialNo);
+        Assert.Equal("UDMPROSE", host.ReportedState.Hardware.ShortName);
+        Assert.Equal("", host.ReportedState.Hardware.Subtype);
+        Assert.Equal(59948, host.ReportedState.Hardware.SysId);
+        Assert.Equal("310", host.ReportedState.Hardware.Upgrade);
+        Assert.Equal(Guid.Parse("eae0f123-0000-5111-b111-f833f56eade5"), host.ReportedState.Hardware.Uuid);
+
         //todo: Check reportedState.internetIssues5min values
         //todo: Check reportedState.ipAddrs values
 
@@ -199,7 +183,6 @@ var host = hosts.First();
         Assert.Equal(24.0978, host.ReportedState.Location.Long);
         Assert.Equal(200, host.ReportedState.Location.Radius);
         Assert.Equal("-----------", host.ReportedState.Location.Text);
-
 
         //todo: Check reportedState.uidb values
         //todo: Check reportedState.unadoptedUnifiOSDevices values

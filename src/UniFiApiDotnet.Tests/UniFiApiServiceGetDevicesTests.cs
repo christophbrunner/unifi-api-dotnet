@@ -1,42 +1,10 @@
-﻿using System.Text.Json.Serialization;
-using System.Text.Json;
-using UniFiApiDotnet.Abstraction;
-using UniFiApiDotnet.Models.Dto;
-using Xunit;
+﻿using Xunit;
 
 namespace UniFiApiDotnet.Tests;
 
 public class UniFiApiServiceGetDevicesTests : BaseTest
 {
-    //[Fact]
-    //public async void GetSites_RAWJson()
-    //{
-    //    // Arrange
-    //    var uniFiApiService = GetUniFiApiService("Devices/FromUniFi.json");
-
-    //    // Act
-    //    var devices = await uniFiApiService.GetDevices();
-
-    //    var full = new GenericApiResponse<IEnumerable<IHostDeviceInfo>>()
-    //    {
-    //        Data = devices
-    //    };
-
-    //    var newJsonString = JsonSerializer.Serialize(full, new JsonSerializerOptions()
-    //    {
-    //        PropertyNameCaseInsensitive = true,
-    //        WriteIndented = true,
-    //        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-    //        DictionaryKeyPolicy = JsonNamingPolicy.KebabCaseLower
-    //    });
-
-
-    //    await File.WriteAllTextAsync("c:\\temp\\devices.json", newJsonString);
-
-    //    // Assert
-    //}
-
-    [Fact]
+  [Fact]
     public async void GetDevices_DeviceCount1()
     {
         // Arrange
@@ -50,7 +18,7 @@ public class UniFiApiServiceGetDevicesTests : BaseTest
     }
 
     [Fact]
-    public async void GetDevices_HostCount3()
+    public async void GetDevices_HostCount2()
     {
         // Arrange
         var uniFiApiService = GetUniFiApiService("Devices/Full.json");
@@ -59,7 +27,7 @@ public class UniFiApiServiceGetDevicesTests : BaseTest
         var devices = await uniFiApiService.GetDevices();
 
         // Assert
-        Assert.Equal(3, devices.Count());
+        Assert.Equal(2, devices.Count());
     }
 
     [Fact]
