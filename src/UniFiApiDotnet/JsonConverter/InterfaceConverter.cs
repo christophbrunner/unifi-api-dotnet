@@ -120,7 +120,11 @@ namespace UniFiApiDotnet.JsonConverter
     {
     }  
     
-    internal class InternetIssuesPeriodConverter : GenericInterfaceConverter<IInternetIssuesPeriod, InternetIssuesPeriod>
+    internal class SiteInternetIssuesPeriodConverter : GenericInterfaceConverter<ISiteInternetIssuesPeriod, SiteInternetIssuesPeriod>
+    {
+    }   
+    
+    internal class HostInternetIssuesPeriodConverter : GenericInterfaceConverter<IHostInternetIssuesPeriod, HostInternetIssuesPeriod>
     {
     }
 

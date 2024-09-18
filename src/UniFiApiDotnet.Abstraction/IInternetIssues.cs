@@ -5,6 +5,6 @@ namespace UniFiApiDotnet.Abstraction
     //todo: add documentation
     public interface IInternetIssues
     {
-        IEnumerable<IInternetIssuesPeriod> Periods { get; set; }
+        IEnumerable<IHostInternetIssuesPeriod> Periods { get; set; }
     }
 }

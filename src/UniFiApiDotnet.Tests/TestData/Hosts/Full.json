@@ -162,6 +162,17 @@
 				},
 				"host_type": 59930,
 				"hostname": "CAM-Storage",
+				"internetIssues5min": {
+					"periods": [
+						{
+							"index": 5755487,
+							"not_reported": true
+						},
+						{
+							"index": 5755488
+						}
+					]
+				},
 				"ip": "127.0.0.1",
 				"ipAddrs": [],
 				"isStacked": true,
@@ -507,7 +518,11 @@
 				"internetIssues5min": {
 					"periods": [
 						{
-							"index": 5750514
+							"index": 5755487,
+							"not_reported": true
+						},
+						{
+							"index": 5755488
 						}
 					]
 				},
