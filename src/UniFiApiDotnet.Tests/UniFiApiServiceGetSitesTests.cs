@@ -80,6 +80,7 @@ public class UniFiApiServiceGetSitesTests : BaseTest
         Assert.Equal(5731624, period.Index);
         Assert.Equal(23, period.LatencyAvgMs);
         Assert.Equal(35, period.LatencyMaxMs);
+        Assert.Null(period.NotReported);
 
         // Check Statistics > IspInfo values
         Assert.Equal("TET", site.Statistics.IspInfo.Name);
@@ -141,6 +142,14 @@ public class UniFiApiServiceGetSitesTests : BaseTest
         Assert.Equal(5731624, period.Index);
         Assert.Equal(23, period.LatencyAvgMs);
         Assert.Equal(35, period.LatencyMaxMs);
+        Assert.True(period.NotReported);
+
+        var period2 = site.Statistics.InternetIssues.Last();
+        Assert.Null(period2.HighLatency);
+        Assert.Equal(5731626, period2.Index);
+        Assert.Null(period2.LatencyAvgMs);
+        Assert.Null(period2.LatencyMaxMs);
+        Assert.Null(period2.NotReported);
 
         // Check Statistics > IspInfo values
         Assert.Equal("Swisscom", site.Statistics.IspInfo.Name);

@@ -6,6 +6,6 @@ namespace UniFiApiDotnet.Models.Dto
 {
     internal class InternetIssues : IInternetIssues
     {
-        public IEnumerable<IInternetIssuesPeriod> Periods { get; set; } = Array.Empty<IInternetIssuesPeriod>();
+        public IEnumerable<IHostInternetIssuesPeriod> Periods { get; set; } = Array.Empty<IHostInternetIssuesPeriod>();
     }
 }

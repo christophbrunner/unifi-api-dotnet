@@ -35,7 +35,8 @@
             "highLatency": true,
             "index": 5731624,
             "latencyAvgMs": 23,
-            "latencyMaxMs": 35
+            "latencyMaxMs": 35,
+            "notReported": true
           },
           {
             "highLatency": true,

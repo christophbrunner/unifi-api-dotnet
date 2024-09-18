@@ -175,7 +175,12 @@ public class UniFiApiServiceGetHostsTests : BaseTest
         Assert.Equal("310", host.ReportedState.Hardware.Upgrade);
         Assert.Equal(Guid.Parse("eae0f123-0000-5111-b111-f833f56eade5"), host.ReportedState.Hardware.Uuid);
 
-        //todo: Check reportedState.internetIssues5min values
+
+        // Check reportedState.InternetIssues5min values
+        var period = host.ReportedState.InternetIssues5min.Periods.First();
+        Assert.Equal(5731574, period.Index);
+        Assert.Null(period.NotReported);
+
         //todo: Check reportedState.ipAddrs values
 
         // Check reportedState.location values
@@ -200,5 +205,31 @@ public class UniFiApiServiceGetHostsTests : BaseTest
         //todo: Check userData.controllers values
         //todo: Check userData.features values
         //todo: Check userData.permissions values
+    }
+
+    [Fact]
+    public async void GetHosts_HostValuesFull()
+    {
+        // Arrange
+        var uniFiApiService = GetUniFiApiService("Hosts/Full.json");
+
+        // Act
+        var hosts = await uniFiApiService.GetHosts();
+        var host = hosts.First();
+
+        // Assert
+        // Check root values
+        Assert.Equal(Guid.Parse("00000000-0000-0000-0000-000000000123"), host.HardwareId);
+        Assert.Equal("000000000000000000000000000000000000000000000000000000000000:000000000", host.Id);
+
+
+        // Check reportedState.InternetIssues5min values
+        var period = host.ReportedState.InternetIssues5min.Periods.First();
+        Assert.Equal(5755487, period.Index);
+        Assert.True(period.NotReported);
+
+        var period2 = host.ReportedState.InternetIssues5min.Periods.Last();
+        Assert.Equal(5755488, period2.Index);
+        Assert.Null(period2.NotReported);
     }
 }

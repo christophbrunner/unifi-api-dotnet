@@ -1,19 +1,21 @@
 ﻿namespace UniFiApiDotnet.Abstraction
 {
     //todo: add documentation
-    public interface IInternetIssuesPeriod
+    public interface ISiteInternetIssuesPeriod
     {
-        bool HighLatency { get; set; }
+        bool? HighLatency { get; set; }
         int Index { get; set; }
+
+        bool? NotReported { get; set; }
 
         /// <summary>
         /// Average latency in milliseconds
         /// </summary>
-        int LatencyAvgMs { get; set; }
+        int? LatencyAvgMs { get; set; }
 
         /// <summary>
         /// Maximal latency in milliseconds
         /// </summary>
-        int LatencyMaxMs { get; set; }
+        int? LatencyMaxMs { get; set; }
     }
 }

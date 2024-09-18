@@ -6,7 +6,7 @@ namespace UniFiApiDotnet.Abstraction
     public interface ISiteStatistics
     {
         ISiteStatisticsCounts Counts { get; set; }
-        IEnumerable<IInternetIssuesPeriod> InternetIssues { get; set; }
+        IEnumerable<ISiteInternetIssuesPeriod> InternetIssues { get; set; }
 
         /// <summary>
         /// Information about the ISP (from the active WAN connection)
