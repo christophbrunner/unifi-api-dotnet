@@ -5,6 +5,8 @@
     {
         int Index { get; set; }
 
+        int? Count { get; set; }
+
         bool? NotReported { get; set; }
     }
 }

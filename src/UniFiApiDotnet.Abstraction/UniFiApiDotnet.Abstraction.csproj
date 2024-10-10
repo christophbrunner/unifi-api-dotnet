@@ -17,7 +17,6 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageReadmeFile>NuGet_README.md</PackageReadmeFile>
 		<PackageIcon>UniFiApiDotnet.png</PackageIcon>
-		<Version>0.1.2-alpha</Version>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DebugType>embedded</DebugType>
 	</PropertyGroup>
