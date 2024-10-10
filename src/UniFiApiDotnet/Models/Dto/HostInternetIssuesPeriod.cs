@@ -6,6 +6,7 @@ namespace UniFiApiDotnet.Models.Dto
     internal class HostInternetIssuesPeriod : IHostInternetIssuesPeriod
     {
         public int Index { get; set; }
+        public int? Count { get; set; }
 
         [JsonPropertyName("not_reported")]
         public bool? NotReported { get; set; }
