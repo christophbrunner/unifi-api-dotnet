@@ -65,6 +65,8 @@ namespace UniFiApiDotnet.Abstraction
         /// </summary>
         int UpdateProgress { get; set; }
 
+        IUpdateSchedule? UpdateSchedule { get; set; }
+
         int RestorePercentage { get; set; }
 
 

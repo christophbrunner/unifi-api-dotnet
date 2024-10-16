@@ -30,6 +30,7 @@ namespace UniFiApiDotnet.Models.Dto
         public bool Updatable { get; set; }
         public string UpdateAvailable { get; set; } = string.Empty;
         public int UpdateProgress { get; set; }
+        public IUpdateSchedule? UpdateSchedule { get; set; }
         public int RestorePercentage { get; set; }
         public bool IsGeofencingEnabled { get; set; }
         public IEnumerable<IUnAdoptedDevice> UnAdoptedDevices { get; set; } = Array.Empty<IUnAdoptedDevice>();

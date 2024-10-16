@@ -6,6 +6,7 @@ namespace UniFiApiDotnet.Models.Dto
     {
         public IReportedStateFeaturesCloud Cloud { get; set; } = new ReportedStateFeaturesCloud();
         public bool CloudBackup { get; set; }
+        public bool CustomSmtpServer { get; set; }
         public IReportedStateFeaturesDeviceList DeviceList { get; set; } = new ReportedStateFeaturesDeviceList();
         public bool DirectRemoteConnection { get; set; }
         public bool HasGateway { get; set; }
@@ -16,9 +17,11 @@ namespace UniFiApiDotnet.Models.Dto
         public bool Mfa { get; set; }
         public bool Notifications { get; set; }
         public bool SharedTokens { get; set; }
+        public bool SnmpConfig { get; set; }
         public bool SupportForm { get; set; }
         public bool Teleport { get; set; }
         public string TeleportState { get; set; } = string.Empty;
         public bool UidService { get; set; }
+        public IReportedStateFeatureUpdates? Updates { get; set; }
     }
 }

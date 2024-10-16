@@ -9,6 +9,7 @@ namespace UniFiApiDotnet.Models.Dto
     {
         public Guid AnonId { get; set; } = Guid.Empty;
         public IEnumerable<IApp> Apps { get; set; } = Array.Empty<IApp>();
+        public IAutoUpdate? AutoUpdate { get; set; }
         public string[] AvailableChannels { get; set; } = Array.Empty<string>();
 
         public IEnumerable<IController> Controllers { get; set; } = Array.Empty<IController>();

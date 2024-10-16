@@ -43,13 +43,13 @@ jobs:
 
     # Create the NuGet package in the folder from the environment variable NuGetDirectory
     - name: Pack UniFiApiDotnet.Abstraction
-      run: dotnet pack src/UniFiApiDotnet.Abstraction/UniFiApiDotnet.Abstraction.csproj -p:PackageVersion=0.1.5 --configuration Release --output '${{ env.NuGetDirectory }}'
+      run: dotnet pack src/UniFiApiDotnet.Abstraction/UniFiApiDotnet.Abstraction.csproj -p:PackageVersion=0.1.6 --configuration Release --output '${{ env.NuGetDirectory }}'
 
     - name: Add package-source (local)
       run: dotnet nuget add source '${{ env.NuGetDirectory }}'
 
     - name: Pack UniFiApiDotnet
-      run: dotnet pack src/UniFiApiDotnet/UniFiApiDotnet.csproj -p:PackageVersion=0.1.5 --configuration Release --output '${{ env.NuGetDirectory }}'
+      run: dotnet pack src/UniFiApiDotnet/UniFiApiDotnet.csproj -p:PackageVersion=0.1.6 --configuration Release --output '${{ env.NuGetDirectory }}'
 
     - name: Publish to GitHub packages 
       run: dotnet nuget push ${{ env.NuGetDirectory }}/*.nupkg -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --skip-duplicate

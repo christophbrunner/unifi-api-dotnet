@@ -8,6 +8,7 @@ namespace UniFiApiDotnet.Abstraction
     {
         Guid AnonId { get; set; }
         IEnumerable<IApp> Apps { get; set; }
+        IAutoUpdate? AutoUpdate { get; set; }
         string[] AvailableChannels { get; set; }
         string[] ConsolesOnSameLocalNetwork { get; set; }
         string ControllerUuid { get; set; }
