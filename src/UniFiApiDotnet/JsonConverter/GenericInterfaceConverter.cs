@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace UniFiApiDotnet.JsonConverter
 {
-    internal abstract class GenericInterfaceConverter<TInterface, TInstance> : JsonConverter<TInterface>
+    internal class GenericInterfaceConverter<TInterface, TInstance> : JsonConverter<TInterface>
         where TInstance : TInterface, new() where TInterface : class
     {
 

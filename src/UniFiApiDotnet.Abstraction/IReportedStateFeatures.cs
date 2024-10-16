@@ -5,6 +5,7 @@
     {
         IReportedStateFeaturesCloud Cloud { get; set; }
         bool CloudBackup { get; set; }
+        bool CustomSmtpServer { get; set; }
         IReportedStateFeaturesDeviceList DeviceList { get; set; }
         bool DirectRemoteConnection { get; set; }
         bool HasGateway { get; set; }
@@ -15,9 +16,11 @@
         bool Mfa { get; set; }
         bool Notifications { get; set; }
         bool SharedTokens { get; set; }
+        bool SnmpConfig { get; set; }
         bool SupportForm { get; set; }
         bool Teleport { get; set; }
         string TeleportState { get; set; }
         bool UidService { get; set; }
+        IReportedStateFeatureUpdates? Updates { get; set; }
     }
 }
