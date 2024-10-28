@@ -40,7 +40,14 @@ namespace UniFiApiDotnet.JsonConverter
 
         public override void Write(Utf8JsonWriter writer, DateTime? value, JsonSerializerOptions options)
         {
-            throw new NotImplementedException();
+            if (value.HasValue)
+            {
+                writer.WriteStringValue(value.Value.ToString("yyyy-MM-ddTHH:mm:ssZ"));
+            }
+            else
+            {
+                writer.WriteNullValue();
+            }
         }
     }
 }

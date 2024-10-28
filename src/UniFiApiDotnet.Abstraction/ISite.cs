@@ -2,6 +2,9 @@
 
 namespace UniFiApiDotnet.Abstraction
 {
+    /// <summary>
+    /// Site information
+    /// </summary>
     public interface ISite
     {
         /// <summary>
@@ -14,6 +17,9 @@ namespace UniFiApiDotnet.Abstraction
         /// </summary>
         bool IsOwner { get; set; }
 
+        /// <summary>
+        /// Meta information of the Site
+        /// </summary>
         ISiteMeta Meta { get; set; }
 
         /// <summary>

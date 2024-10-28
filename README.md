@@ -64,6 +64,8 @@ API Coverage
 | [Get Host by ID](https://developer.ui.com/unifi-api/get__ea_hosts_id/) | :heavy_check_mark: | `GetHostById(x)` |
 | [List Sites](https://developer.ui.com/unifi-api/get__ea_sites/) | :heavy_check_mark:  | `GetSites()`  |
 | [List Devices](https://developer.ui.com/unifi-api/get__ea_devices/) | :heavy_check_mark:  | `GetDevices(x)`  |
+| [Get ISP Metrics](https://developer.ui.com/unifi-api/get__ea_isp-metrics_type/) | :heavy_check_mark:  | `GetIspMetrics(x)`  |
+| [Query ISP Metrics](https://developer.ui.com/unifi-api/post__ea_isp-metrics_type_query/) | :heavy_check_mark:  | `QueryIspMetrics(x)`  |
 
 Authentication
 --------------
