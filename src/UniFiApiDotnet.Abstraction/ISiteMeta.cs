@@ -1,11 +1,24 @@
 ﻿namespace UniFiApiDotnet.Abstraction
 {
-    //todo: add documentation
+    /// <summary>
+    /// Site Meta data
+    /// </summary>
     public interface ISiteMeta
     {
-        string Desc { get; set; }
-        string GatewayMac { get; set; }
+        /// <summary>
+        /// Name of the site
+        /// </summary>
         string Name { get; set; }
+
+        /// <summary>
+        /// Description of the site
+        /// </summary>
+        string Desc { get; set; }
+
+        /// <summary>
+        /// Mac address of the gateway
+        /// </summary>
+        string GatewayMac { get; set; }
 
         /// <summary>
         /// Timezone ot the site (e.g. "Europe/Zurich")

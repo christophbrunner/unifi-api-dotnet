@@ -56,6 +56,6 @@
 
 
 	<ItemGroup Condition="'$(Configuration)' == 'Release'">
-		<PackageReference Include="UniFiApiDotnet.Abstraction" Version="0.1.7" />
+		<PackageReference Include="UniFiApiDotnet.Abstraction" Version="0.2.0" />
 	</ItemGroup>
 </Project>

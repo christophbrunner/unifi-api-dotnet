@@ -16,6 +16,7 @@ using UniFiApiDotnet.JsonConverter;
 using UniFiApiDotnet.Models.Dto;
 using Host = UniFiApiDotnet.Models.Dto.Host;
 using UniFiApiDotnet.Models;
+using System.Text;
 
 namespace UniFiApiDotnet
 {
@@ -83,7 +84,14 @@ namespace UniFiApiDotnet
                 new GenericInterfaceConverter<IReportedStateFeatureUpdates, ReportedStateFeatureUpdates>(),
                 new GenericInterfaceConverter<IAutoUpdate, AutoUpdate>(),
                 new GenericInterfaceConverter<IUpdateSchedule, UpdateSchedule>(),
-                new GenericInterfaceConverter<IAutoUpdatePreferencesPromptUnifiOs, AutoUpdatePreferencesPromptUnifiOs>()
+                new GenericInterfaceConverter<IAutoUpdatePreferencesPrompt, AutoUpdatePreferencesPrompt>(),
+                new GenericInterfaceConverter<IAutoUpdatePreferencesPromptUnifiOs,
+                    AutoUpdatePreferencesPromptUnifiOs>(),
+                new GenericInterfaceConverter<IIspMetrics, IspMetrics>(),
+                new GenericInterfaceConverter<IIspMetricsPeriod, IspMetricsPeriod>(),
+                new GenericInterfaceConverter<IIspMetricsPeriodData, IspMetricsPeriodData>(),
+                new GenericInterfaceConverter<IIspMetricsPeriodDataWan, IspMetricsPeriodDataWan>(),
+                new GenericInterfaceConverter<IIspQueryMetrics, IspQueryMetrics>()
             }
         };
 
@@ -229,7 +237,7 @@ namespace UniFiApiDotnet
 
         public void SetUserAgent(string userAgent)
         {
-            if(string.IsNullOrWhiteSpace(userAgent))
+            if (string.IsNullOrWhiteSpace(userAgent))
             {
                 throw new ArgumentException(nameof(userAgent), "Value can't be empty");
             }
@@ -310,30 +318,139 @@ namespace UniFiApiDotnet
 
         #endregion
 
+        #region GetIspMetrics
+
+        public async Task<IEnumerable<IIspMetrics>> GetIspMetrics(IspMetricType metricType)
+        {
+            return await GetIspMetrics(CancellationToken.None, metricType).ConfigureAwait(false);
+        }
+
+        public async Task<IEnumerable<IIspMetrics>> GetIspMetrics(CancellationToken cancellationToken,
+            IspMetricType metricType)
+        {
+            return await GetIspMetrics(cancellationToken, metricType, new List<KeyValuePair<string, string>>())
+                .ConfigureAwait(false);
+        }
+
+        public async Task<IEnumerable<IIspMetrics>> GetIspMetrics(
+            IspMetricType metricType, DateTime begin, DateTime end)
+        {
+            return await GetIspMetrics(CancellationToken.None, metricType, begin, end);
+        }
+
+        public async Task<IEnumerable<IIspMetrics>> GetIspMetrics(CancellationToken cancellationToken,
+            IspMetricType metricType, DateTime begin, DateTime end)
+        {
+            return await GetIspMetrics(cancellationToken, metricType, new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("beginTimestamp", begin.ToString("yyyy-MM-ddTHH:mm:ssZ")),
+                new KeyValuePair<string, string>("endTimestamp", end.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+            }).ConfigureAwait(false);
+        }
+
+        public async Task<IEnumerable<IIspMetrics>> GetIspMetrics(IspMetricType metricType, Duration duration)
+        {
+            return await GetIspMetrics(CancellationToken.None, metricType, duration);
+        }
+
+        public async Task<IEnumerable<IIspMetrics>> GetIspMetrics(CancellationToken cancellationToken,
+            IspMetricType metricType, Duration duration)
+        {
+            return await GetIspMetrics(cancellationToken, metricType, new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("duration", GetDurationParam(duration))
+            }).ConfigureAwait(false);
+        }
+
+     
+
+        private async Task<IEnumerable<IIspMetrics>> GetIspMetrics(CancellationToken cancellationToken,
+            IspMetricType metricType, IEnumerable<KeyValuePair<string, string>>? queryParameters = null)
+        {
+            string endpoint = $"ea/isp-metrics/{GetMetricTypeParam(metricType)}";
+
+            if (queryParameters != null && queryParameters.ToArray().Any())
+            {
+                endpoint += "?" + string.Join("&", queryParameters.Select(x => $"{x.Key}={x.Value}"));
+            }
+
+            return await GetData<IEnumerable<IspMetrics>>(endpoint, cancellationToken).ConfigureAwait(false);
+
+        }
+
+        private string GetMetricTypeParam(IspMetricType metricType)
+        {
+            switch (metricType)
+            {
+                case IspMetricType.Predefined5M:
+                {
+                    return "5m";
+                }
+                case IspMetricType.Predefined1H:
+                {
+                    return "1h";
+                }
+
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(metricType), metricType, null);
+            }
+        }
+
+        private string GetDurationParam(Duration duration)
+        {
+            switch (duration)
+            {
+                case Duration.Predefined24H:
+                {
+                    return "24h";
+                }
+                case Duration.Predefined7D:
+                {
+                    return "7d";
+                }
+                case Duration.Predefined30D:
+                {
+                    return "30d";
+                }
+
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(duration), duration, null);
+            }
+        }
+
+        #endregion
+
+        #region QueryIspMetrics
+
+        public async Task<IIspQueryMetrics> QueryIspMetrics(IspMetricType metricType, IEnumerable<QueryIspMetricsFilter> sites)
+        {
+            return await QueryIspMetrics(CancellationToken.None, metricType, sites)
+                .ConfigureAwait(false);
+        }
+
+        public async Task<IIspQueryMetrics> QueryIspMetrics(CancellationToken cancellationToken, IspMetricType metricType, IEnumerable<QueryIspMetricsFilter> sites)
+        {
+            string endpoint = $"ea/isp-metrics/{GetMetricTypeParam(metricType)}/query";
+
+            var body = new
+            {
+                sites
+            };
+
+            return await PostData<IspQueryMetrics>(endpoint, cancellationToken, body).ConfigureAwait(false);
+        }
+
+        #endregion
+
         private async Task<T> GetData<T>(string endpoint, CancellationToken cancellationToken)
         {
             HttpResponseMessage? response = null;
             try
             {
-                _logger?.LogDebug($"Requesting {endpoint}");
+                _logger?.LogDebug($"GET Requesting {endpoint}");
 
                 response = await GetHttpClient().GetAsync(endpoint, cancellationToken);
-                _logger?.LogDebug($"Response status code: {response.StatusCode}");
-                response.EnsureSuccessStatusCode();
-                var responseStream = await response.Content.ReadAsStreamAsync();
-
-                if (responseStream == null)
-                {
-                    throw new Exception("GenericApiResponse stream is null");
-                }
-
-                var result = await JsonSerializer.DeserializeAsync<GenericApiResponse<T>>(responseStream,
-                    _jsonSerializerOptions, cancellationToken);
-
-                if (result == null)
-                {
-                    throw new Exception("Deserialization failed");
-                }
+                var result = await CheckAndParseResponse<T>(cancellationToken, response);
 
                 return result.Data;
             }
@@ -356,6 +473,64 @@ namespace UniFiApiDotnet
                 _logger?.LogError(ex, "Error on {Caller}", nameof(GetData));
                 throw;
             }
+        }
+
+        private async Task<T> PostData<T>(string endpoint, CancellationToken cancellationToken, object body)
+        {
+            HttpResponseMessage? response = null;
+            try
+            {
+                _logger?.LogDebug($"POST Requesting {endpoint}");
+
+                var bodyAsJson = JsonSerializer.Serialize(body, _jsonSerializerOptions);
+                var stringData = new StringContent(bodyAsJson, Encoding.UTF8, @"application/json");
+
+                response = await GetHttpClient().PostAsync(endpoint, stringData, cancellationToken);
+                var result = await CheckAndParseResponse<T>(cancellationToken, response);
+
+                return result.Data;
+            }
+            catch (HttpRequestException ex)
+            {
+                var error = await ReadError(response);
+
+                UnifiApiException apiException = new UnifiApiException(
+                    $"API Error | {(int)error.HttpStatusCode} ({error.HttpStatusCode}) | {error.Code} | {error.Message} | TraceId: {error.TraceId}",
+                    ex);
+
+                apiException.Data.Add("Error", error);
+
+                _logger?.LogError(apiException, "Error on UnifiApi");
+
+                throw apiException;
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, "Error on {Caller}", nameof(GetData));
+                throw;
+            }
+        }
+
+        private async Task<GenericApiResponse<T>> CheckAndParseResponse<T>(CancellationToken cancellationToken, HttpResponseMessage response)
+        {
+            _logger?.LogDebug($"Response status code: {response.StatusCode}");
+            response.EnsureSuccessStatusCode();
+            var responseStream = await response.Content.ReadAsStreamAsync();
+
+            if (responseStream == null)
+            {
+                throw new Exception("GenericApiResponse stream is null");
+            }
+
+            var result = await JsonSerializer.DeserializeAsync<GenericApiResponse<T>>(responseStream,
+                _jsonSerializerOptions, cancellationToken);
+
+            if (result == null)
+            {
+                throw new Exception("Deserialization failed");
+            }
+
+            return result;
         }
 
         private async Task<BaseResponse> ReadError(HttpResponseMessage? response)

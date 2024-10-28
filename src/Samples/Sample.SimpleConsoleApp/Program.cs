@@ -3,7 +3,7 @@ using Sample.Calls;
 using UniFiApiDotnet;
 using UniFiApiDotnet.Abstraction;
 
-IUniFiApiService uniFiApiService = new UniFiApiService("[your_api_key]");
+IUniFiApiService uniFiApiService = new UniFiApiService("SeB_NKSmj2vK3GHMPcrzyA-qgjTrvCRg");
 
 
 // Sample with proxy
