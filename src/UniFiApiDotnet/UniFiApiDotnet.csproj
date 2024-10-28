@@ -21,7 +21,6 @@
 		<PackageReadmeFile>NuGet_README.md</PackageReadmeFile>
 		<PackageIcon>UniFiApiDotnet.png</PackageIcon>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<Version>0.1.0-alpha</Version>
 		<DebugType>embedded</DebugType>
 
 	</PropertyGroup>
@@ -57,6 +56,6 @@
 
 
 	<ItemGroup Condition="'$(Configuration)' == 'Release'">
-		<PackageReference Include="UniFiApiDotnet.Abstraction" Version="0.1.6" />
+		<PackageReference Include="UniFiApiDotnet.Abstraction" Version="0.1.7" />
 	</ItemGroup>
 </Project>
