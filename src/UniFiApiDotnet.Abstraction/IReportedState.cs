@@ -83,7 +83,5 @@ namespace UniFiApiDotnet.Abstraction
         string Version { get; set; }
 
         bool OverrideInformHost { get; set; }
-
-        IReportedStateUi? Ui { get; set; }
     }
 }
