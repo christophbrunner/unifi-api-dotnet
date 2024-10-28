@@ -50,7 +50,5 @@ namespace UniFiApiDotnet.Models.Dto
 
         [JsonPropertyName("override_inform_host")]
         public bool OverrideInformHost { get; set; }
-
-        public IReportedStateUi? Ui { get; set; } = null;
     }
 }

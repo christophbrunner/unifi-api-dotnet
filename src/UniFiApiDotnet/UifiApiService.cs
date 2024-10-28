@@ -75,7 +75,6 @@ namespace UniFiApiDotnet
                 new GenericInterfaceConverter<IInternetIssues, InternetIssues>(),
                 new GenericInterfaceConverter<ISiteInternetIssuesPeriod, SiteInternetIssuesPeriod>(),
                 new GenericInterfaceConverter<IHostInternetIssuesPeriod, HostInternetIssuesPeriod>(),
-                new GenericInterfaceConverter<IReportedStateUi, ReportedStateUi>(),
                 new GenericInterfaceConverter<ISiteStatistics, SiteStatistics>(),
                 new GenericInterfaceConverter<ISiteStatisticsCounts, SiteStatisticsCounts>(),
                 new GenericInterfaceConverter<ISiteMeta, SiteMeta>(),
