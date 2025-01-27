@@ -1,7 +1,7 @@
 UniFi API dotnet Client
 =======================
 
-A .NET (netstandard) client for the official UniFi API.  Provides asynchronous API operations.
+A .NET (netstandard) client for the official UniFi Site Manager API.  Provides asynchronous API operations.
 
 The client is suitable for dependency injection (DI) and for classic applications.
 
@@ -12,15 +12,15 @@ The client is suitable for dependency injection (DI) and for classic application
 The UniFi API
 -------------
 The official UniFi API is developed by Ubiquiti Networks created to enable developers to programmatically monitor and manage UniFi deployments at scale.
+It provides robust tools to access and control your UniFi devices’ data, allowing you to retrieve detailed information, monitor performance, and manage your network infrastructure efficiently. 
 
-UniFi API Version 0.1 centers around extracting data from the UniFi Site Manager (unifi.ui.com). Future versions will expand support to include more granular configurations, allowing management of individual sites and the devices within those sites.
-
+Site Manager API Version 0.1 centers around extracting data from the UniFi Site Manager (unifi.ui.com). Future versions will expand support to include more granular configurations, allowing management of individual sites and the devices within those sites.
 The original documentation can be found at https://developer.ui.com/unifi-api/.
 
 Usage
 -----
 
-Simple and easy to use, the UniFi API dotnet Client provides a set of methods to interact with the UniFi API.
+Simple and easy to use, the UniFi Site Manager API dotnet Client provides a set of methods to interact with the UniFi Site Manager API.
 
 ```csharp
 IUniFiApiService uniFiApiService = new UniFiApiService();
@@ -69,7 +69,7 @@ API Coverage
 
 Authentication
 --------------
-The UniFi API use a API key for authentication.
+The UniFi Site Manager API use a API key for authentication.
 The API key can be created in the UniFi [Site Manager > API](https://unifi.ui.com/api).
 
 The API key can be initialized via different variants.
@@ -158,7 +158,7 @@ The client uses the [Microsoft.Extensions.Logging](https://learn.microsoft.com/e
 
 Bugs and Feedback
 -----------------
-The UniFi API is unfortunately not fully documented by UniFi.
+The UniFi Site Manager API is unfortunately not fully documented by UniFi.
 The current implementation of the service is based on demo data and data from customers. 
 
 If you miss something just create an [issue](https://github.com/christophbrunner/unifi-api-dotnet/issues).
