@@ -12,7 +12,7 @@
 		<NoWarn>$(NoWarn);CS1591</NoWarn>
 
 		<Authors>Christoph Brunner</Authors>
-		<Description>dotnet wrapper around UniFi's official API</Description>
+		<Description>dotnet wrapper around UniFi's official Site Manager API</Description>
 		<PackageProjectUrl>https://github.com/christophbrunner/unifi-api-dotnet</PackageProjectUrl>
 		<PackageTags>unifi, api, async, library</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
